@@ -1,0 +1,4 @@
+{"level":"info","message":"Hoa esto es un mensjae informativo"}
+{"level":"debug","message":"Esto es un mensaje de debug"}
+{"level":"warn","message":"Esto es un mensaje de emergencia"}
+{"level":"error","message":"Esto es un mensaje de error"}
