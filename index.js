@@ -1,21 +1,26 @@
-// const logger = require("./logger/logger");
-const moduloMatematicas = require("./modulos/matematicas");
-// logger.info("Hoa esto es un mensjae informativo");
-// logger.debug("Esto es un mensaje de debug");
-// logger.warn("Esto es un mensaje de emergencia");
-// logger.error("Esto es un mensaje de error");
-const { suma, factorial, multiplica, eleva } = moduloMatematicas;
-
-const fact = factorial(5);
-console.log(fact);
-
-const sum = suma(5, 10);
-console.log(sum);
+const parrafo = document.getElementById("parrafo");
+const texto = document.getElementById("texto");
 
 
-const mult = multiplica(5, 10);
-console.log(mult);
+parrafo.addEventListener("click", () => {
+  parrafo.style.color = "blue";
+});
 
 
-const elv = eleva(5, 10);
-console.log(elv);
+texto.addEventListener("cambioTexto", (evento) => {
+  console.log(evento)
+  texto.innerText = evento.detail.texto;
+  texto.style.color = evento.detail.color
+})
+
+function cambiarTexto(nuevoTexto, color) {
+  const evento = new CustomEvent("cambioTexto", {
+    details: {
+      texto: nuevoTexto,
+      color,
+    },
+  });
+  texto.dispatchEvent(evento)
+}
+
+// localStorage.setItem("ellis")
